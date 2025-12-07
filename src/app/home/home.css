@@ -18,6 +18,19 @@
   font-weight: bold;
   z-index: 10;
   position: absolute;
+  /* Add animation */
+  animation: badge-pulse 1.5s infinite;
+}
+
+/* Custom pulse keeping rotation */
+@keyframes badge-pulse {
+  0%,
+  100% {
+    transform: rotate(-45deg) scale(1);
+  }
+  50% {
+    transform: rotate(-45deg) scale(1.2);
+  }
 }
 
 /* Image Box */
@@ -90,4 +103,29 @@
 
 .cart-btn :hover {
   color: #006aff;
+}
+.favorite-btn {
+  position: absolute; /* overlay on image */
+  top: 10px; /* distance from top */
+  right: 10px; /* distance from right */
+  background: rgba(255, 0, 0, 0.8);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; /* red heart */
+  transition: transform 0.3s, background 0.3s;
+}
+
+.favorite-btn:hover {
+  transform: scale(1.2);
+  background: rgb(255, 0, 0);
+}
+
+.favorite-btn i {
+  font-size: 16px;
 }
