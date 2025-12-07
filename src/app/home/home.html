@@ -1,0 +1,48 @@
+<div class="row">
+  @for (product of ProdcutService.getProducts(); track product.id) {
+
+  <div class="col-lg-3 col-md-3 col-sm-6 mb-4">
+    <div
+      class="custom-card animate__animated animate__fadeInUp position-relative"
+      [style.animation-delay]="product.id * 0.2 + 's'"
+    >
+      <!-- Rotated Category Badge -->
+      <span class="position-absolute bg-warning text-dark px-5 py-1 badge-rotate">
+        {{ product.category }}
+      </span>
+
+      <!-- Image -->
+      <div
+        class="card-img-top d-flex justify-content-center align-items-center"
+        style="height: 180px"
+      >
+        <img src="{{ product.image }}" alt="Product" style="width: 120px; height: auto" />
+      </div>
+
+      <!-- Info Box -->
+      <div class="info-box">
+        <h6 class="title">
+          {{ product.title?.length > 15 ? product.title.slice(0, 15) + '...' : product.title }}
+        </h6>
+
+        <p class="desc">
+          {{
+            product.description?.length > 50
+              ? product.description.slice(0, 50) + '...'
+              : product.description
+          }}
+        </p>
+      </div>
+
+      <!--  Footer always bottom -->
+      <div class="card-footer-custom">
+        <span class="price">${{ product.price }}</span>
+        <button class="cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  }
+</div>
