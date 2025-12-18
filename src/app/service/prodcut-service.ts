@@ -153,10 +153,15 @@ export class ProdcutService {
       name: 'vivo Y300 Pro',
       price: '203.00',
       stock: 5,
-      description: null,
+      description:
+        'vivo Y300 Pro Android smartphone. Announced Sep 2024. Features 6.77″ display, Snapdragon 6 Gen 1 chipset, 6500 mAh battery, 512 GB storage, 12 GB RAM',
       status: 'active',
       category: 'Vivo',
-      images: ['https://krstoreapi.phalla.lol/images/products/vivo_y300_pro-l.jpg.png'],
+      images: [
+        'https://krstoreapi.phalla.lol/images/products/vivo_y300_pro-b.jpg.png',
+        'https://krstoreapi.phalla.lol/images/products/vivo_y300_pro-t.jpg.png',
+        'https://krstoreapi.phalla.lol/images/products/vivo_y300_pro-w.jpg.png',
+      ],
     },
     {
       id: 36,
