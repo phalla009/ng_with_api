@@ -3,14 +3,13 @@
 </nav>
 <!-- Banner Carousel -->
 <div class="container p-0 mt-5 pt-4">
-  <app-benner></app-benner>
+  <!-- <app-benner></app-benner> -->
 </div>
 
 <div class="container mt-5 pt-4">
-  <div class="row">
-    <app-home class="row"></app-home>
-  </div>
+  <router-outlet></router-outlet>
 </div>
+
 <footer class="bg-dark text-white mt-5 pt-4 pb-4 animate__animated animate__fadeInUp">
   <div class="container">
     <div class="row">
@@ -18,5 +17,3 @@
     </div>
   </div>
 </footer>
-
-<router-outlet />

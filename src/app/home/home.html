@@ -1,5 +1,5 @@
 <div class="row">
-  @for (product of ProdcutService.getProducts(); track product.id) {
+  @for (product of ProdcutService.products_list; track product.id) {
 
   <div class="col-lg-3 col-md-3 col-sm-6 mb-4">
     <div
@@ -13,7 +13,7 @@
       <span
         class="position-absolute bg-warning text-dark px-5 py-1 badge-rotate animate__animated animate__pulse animate__infinite badge-rotate"
       >
-        {{ product.category }}
+        {{ product.category_name }}
       </span>
 
       <!-- Image -->
@@ -22,20 +22,29 @@
         style="height: 180px"
       >
         <!-- Favorite Button -->
-        <button
+        <!-- <button
           class="favorite-btn animate__animated"
           onmouseenter="this.classList.add('animate__pulse')"
           onmouseleave="this.classList.remove('animate__pulse')"
         >
           <i class="fas fa-heart"></i>
-        </button>
-        <img src="{{ product.images[0] }}" alt="Product" style="width: 180px; height: auto" />
+        </button> -->
+        <img
+          routerLink="product-detail"
+          src="{{ product.image }}"
+          alt="Product"
+          style="width: 180px; height: auto"
+        />
       </div>
 
       <!-- Info Box -->
-      <div class="info-box animate__animated animate__fadeIn animate__delay-1s">
+      <div class="info-box animate__animated animate__fadeIn animate__delay-1s mt-3">
         <h6 class="title">
-          {{ product.name?.length > 15 ? product.name.slice(0, 15) + '...' : product.name }}
+          {{
+            product.product_name?.length > 15
+              ? product.product_name.slice(0, 15) + '...'
+              : product.product_name
+          }}
         </h6>
 
         <p class="desc">

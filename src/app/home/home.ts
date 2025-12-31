@@ -1,12 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ProdcutService } from '../service/prodcut-service';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  standalone: true,
+  imports: [RouterLink, RouterModule],
   templateUrl: './home.html',
-  styleUrl: './home.css',
+  styleUrls: ['./home.css'],
 })
 export class Home {
-  constructor(public ProdcutService: ProdcutService) {}
+  products_list: any[] = [];
+  constructor(public ProdcutService: ProdcutService, public crd: ChangeDetectorRef) {}
+
+  async ngOnInit() {
+    this.products_list = await this.ProdcutService.getProducts();
+    // console.log(this.products_list);
+    this.crd.detectChanges();
+  }
 }

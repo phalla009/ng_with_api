@@ -1,0 +1,51 @@
+.product-image {
+  max-height: 400px;
+  object-fit: contain;
+  width: 100%;
+}
+
+.badge-category {
+  font-size: 0.9rem;
+  position: absolute;
+  top: 15px;
+  left: -15px;
+  transform: rotate(-15deg);
+  padding: 0.5rem 1rem;
+  background-color: #ffc107;
+  color: #212529;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+}
+
+.favorite-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: none;
+  background: none;
+  color: #dc3545;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.favorite-btn:hover {
+  color: #a71d2a;
+}
+
+.cart-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.cart-btn:hover {
+  background-color: #0056b3;
+}
