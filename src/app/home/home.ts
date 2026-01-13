@@ -1,6 +1,7 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { ProdcutService } from '../service/prodcut-service';
 import { RouterLink, RouterModule } from '@angular/router';
+import { CartService } from '../service/cart-service';
 
 @Component({
   selector: 'app-home',
@@ -10,12 +11,21 @@ import { RouterLink, RouterModule } from '@angular/router';
   styleUrls: ['./home.css'],
 })
 export class Home {
-  products_list: any[] = [];
-  constructor(public ProdcutService: ProdcutService, public crd: ChangeDetectorRef) {}
+  products_list: any[] = [
+
+  ];
+  constructor(
+    public ProdcutService: ProdcutService,
+    public crd: ChangeDetectorRef,
+    public CartService: CartService
+  ) {}
 
   async ngOnInit() {
     this.products_list = await this.ProdcutService.getProducts();
-    // console.log(this.products_list);
     this.crd.detectChanges();
+  }
+  addTocart(product: any): void {
+    this.CartService.setCart(product);
+    
   }
 }

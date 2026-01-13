@@ -14,38 +14,20 @@
         </tr>
       </thead>
       <tbody id="cart-items">
+        @for (product of CartService.getCart(); track product.id) {
         <tr>
           <td>
-            <img
-              src="https://krstoreapi.phalla.lol/images/products/1.png"
-              class="cart-img"
-              alt="Product"
-            />
+            <img src="{{ product.image }}" class="cart-img" alt="Product" />
           </td>
-          <td>Product 1</td>
-          <td>$50.00</td>
+          <td>{{ product.product_name }}</td>
+          <td>{{ product.price }}</td>
           <td><input type="number" class="form-control qty-input" value="1" min="1" /></td>
           <td>$50.00</td>
           <td>
             <button class="remove-btn"><i class="fas fa-trash-alt"></i></button>
           </td>
         </tr>
-        <tr>
-          <td>
-            <img
-              src="https://krstoreapi.phalla.lol/images/products/1.png"
-              class="cart-img"
-              alt="Product"
-            />
-          </td>
-          <td>Product 2</td>
-          <td>$30.00</td>
-          <td><input type="number" class="form-control qty-input" value="2" min="1" /></td>
-          <td>$60.00</td>
-          <td>
-            <button class="remove-btn"><i class="fas fa-trash-alt"></i></button>
-          </td>
-        </tr>
+        }
       </tbody>
     </table>
   </div>

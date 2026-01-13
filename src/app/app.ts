@@ -5,6 +5,7 @@ import { Home } from './home/home';
 import { Footer } from './footer/footer';
 import { Navbar } from './navbar/navbar';
 import { Benner } from './benner/benner';
+import { CartService } from './service/cart-service';
 
 @Component({
   selector: 'app-root',
@@ -13,5 +14,6 @@ import { Benner } from './benner/benner';
   styleUrl: './app.css',
 })
 export class App {
-  
+  constructor(public CartService: CartService){
+  }
 }

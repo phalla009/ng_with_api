@@ -21,14 +21,6 @@
         class="card-img-top d-flex justify-content-center align-items-center animate__animated animate__zoomIn"
         style="height: 180px"
       >
-        <!-- Favorite Button -->
-        <!-- <button
-          class="favorite-btn animate__animated"
-          onmouseenter="this.classList.add('animate__pulse')"
-          onmouseleave="this.classList.remove('animate__pulse')"
-        >
-          <i class="fas fa-heart"></i>
-        </button> -->
         <img
           routerLink="product-detail"
           src="{{ product.image }}"
@@ -66,8 +58,11 @@
           class="cart-btn animate__animated animate__heartBeat"
           onmouseenter="this.classList.add('animate__pulse')"
           onmouseleave="this.classList.remove('animate__pulse')"
+          (click)="addTocart(product)"
         >
-          <i class="fas fa-shopping-cart"></i>
+        
+          <i class="fas fa-shopping-cart"
+          ></i>
         </button>
       </div>
     </div>

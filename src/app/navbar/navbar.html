@@ -17,37 +17,9 @@
       <li class="nav-item">
         <a href="#" class="nav-link" routerLink="/"> Home </a>
       </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/product"> Products </a>
-      </li>
-
-      <!-- <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle"
-          href="#"
-          id="navbarDropdown"
-          role="button"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          Categories
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/about"> About Us </a>
-      </li> -->
     </ul>
 
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0" (submit)="$event.preventDefault()">
       <div class="input-group">
         <input
           class="form-control"
@@ -66,7 +38,10 @@
 
     <!-- Cart Button -->
     <a href="/cart" class="btn btn-outline-primary ml-2">
-      <i class="fas fa-shopping-cart"></i> Cart
+      <i class="fas fa-shopping-cart"></i> Cart(<span class="text-danger">{{
+        CartService.getCart().length
+      }}</span
+      >)
     </a>
   </div>
 </nav>
